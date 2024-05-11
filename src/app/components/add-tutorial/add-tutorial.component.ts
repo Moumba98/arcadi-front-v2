@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Tutorial } from '../../models/tutorial.model';
 import { TutorialService } from '../../services/tutorial.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-add-tutorial',
@@ -8,10 +9,12 @@ import { TutorialService } from '../../services/tutorial.service';
   styleUrls: ['./add-tutorial.component.css'],
 })
 export class AddTutorialComponent {
-  tutorial: Tutorial = {
-    title: '',
-    description: '',
-    published: false
+  tutorial: User = {
+    username: '',
+    name: '',
+    password: '',
+    first_name : '',
+    role_id : 0
   };
   submitted = false;
 
@@ -19,9 +22,14 @@ export class AddTutorialComponent {
 
   saveTutorial(): void {
     const data = {
-      title: this.tutorial.title,
-      description: this.tutorial.description
+      username: this.tutorial.username,
+      name: this.tutorial.name,
+      password : this.tutorial.password,
+      first_name : this.tutorial.first_name,
+      role_id : this.tutorial.role_id
     };
+
+    console.log("In my component" + data);
 
     this.tutorialService.create(data).subscribe({
       next: (res) => {
@@ -35,9 +43,11 @@ export class AddTutorialComponent {
   newTutorial(): void {
     this.submitted = false;
     this.tutorial = {
-      title: '',
-      description: '',
-      published: false
+      first_name: '',
+      name: '',
+      password: '',
+      username : '',
+      role_id : 0
     };
   }
 }

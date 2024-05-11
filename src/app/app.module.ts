@@ -14,8 +14,7 @@ import { TutorialsListComponent } from './components/tutorials-list/tutorials-li
     AppComponent,
     AddTutorialComponent,
     TutorialDetailsComponent,
-    TutorialsListComponent
-  ],
+    TutorialsListComponent,  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

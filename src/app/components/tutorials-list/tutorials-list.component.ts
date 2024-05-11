@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tutorial } from '../../models/tutorial.model';
 import { TutorialService } from '../../services/tutorial.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-tutorials-list',
@@ -8,8 +9,8 @@ import { TutorialService } from '../../services/tutorial.service';
   styleUrls: ['./tutorials-list.component.css'],
 })
 export class TutorialsListComponent implements OnInit {
-  tutorials?: Tutorial[];
-  currentTutorial: Tutorial = {};
+  tutorials?: User[];
+  currentTutorial: User = {};
   currentIndex = -1;
   title = '';
 
@@ -35,7 +36,7 @@ export class TutorialsListComponent implements OnInit {
     this.currentIndex = -1;
   }
 
-  setActiveTutorial(tutorial: Tutorial, index: number): void {
+  setActiveTutorial(tutorial: User, index: number): void {
     this.currentTutorial = tutorial;
     this.currentIndex = index;
   }
