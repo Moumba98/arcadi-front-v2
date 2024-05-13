@@ -8,7 +8,7 @@
         class="form-control"
         id="username"
         required
-        [(ngModel)]="tutorial.username"
+        [(ngModel)]="user.username"
         name="username"
       />
     </div>
@@ -19,7 +19,7 @@
         class="form-control"
         id="name"
         required
-        [(ngModel)]="tutorial.name"
+        [(ngModel)]="user.name"
         name="name"
       />
     </div>
@@ -31,7 +31,7 @@
         class="form-control"
         id="first_name"
         required
-        [(ngModel)]="tutorial.first_name"
+        [(ngModel)]="user.first_name"
         name="first_name"
       />
       </div>
@@ -43,7 +43,7 @@
           class="form-control"
           id="role_id"
           required
-          [(ngModel)]="tutorial.role_id"
+          [(ngModel)]="user.role_id"
           name="role_id"
         />
       </div>
@@ -53,16 +53,16 @@
         class="form-control"
         id="password"
         required
-        [(ngModel)]="tutorial.password"
+        [(ngModel)]="user.password"
         name="password"
         type="password"
       />
     </div>
 
-    <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
+    <button (click)="saveUser()" class="btn btn-success">Submit</button>
     } @else {
     <h4>User was submitted successfully!</h4>
-    <button class="btn btn-success" (click)="newTutorial()">Add</button>
+    <button class="btn btn-success" (click)="newUser()">Add</button>
     }
   </div>
 </div>

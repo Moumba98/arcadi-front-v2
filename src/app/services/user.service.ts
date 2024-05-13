@@ -10,7 +10,7 @@ const baseUrl = 'http://localhost/zoo-arcadi-back-end/userApi.php';
 @Injectable({
   providedIn: 'root',
 })
-export class TutorialService {
+export class UserService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<User[]> {
@@ -18,7 +18,8 @@ export class TutorialService {
   }
 
   get(id: any): Observable<User> {
-    return this.http.get<User>(`${baseUrl}/${id}`);
+    const numericId = +id;
+    return this.http.get<User>(`${baseUrl}/?user_id=${numericId}`);
   }
 
   create(data: any): Observable<any> {

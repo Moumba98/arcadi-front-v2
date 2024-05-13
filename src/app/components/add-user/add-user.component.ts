@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { Tutorial } from '../../models/tutorial.model';
-import { TutorialService } from '../../services/tutorial.service';
+import { UserService } from '../../services/user.service';
 import { User } from '../../models/user.model';
 
 @Component({
-  selector: 'app-add-tutorial',
-  templateUrl: './add-tutorial.component.html',
-  styleUrls: ['./add-tutorial.component.css'],
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.css'],
 })
-export class AddTutorialComponent {
-  tutorial: User = {
+export class AddUserComponent {
+  user: User = {
     username: '',
     name: '',
     password: '',
@@ -18,20 +18,20 @@ export class AddTutorialComponent {
   };
   submitted = false;
 
-  constructor(private tutorialService: TutorialService) {}
+  constructor(private UserService: UserService) {}
 
-  saveTutorial(): void {
+  saveUser(): void {
     const data = {
-      username: this.tutorial.username,
-      name: this.tutorial.name,
-      password : this.tutorial.password,
-      first_name : this.tutorial.first_name,
-      role_id : this.tutorial.role_id
+      username: this.user.username,
+      name: this.user.name,
+      password : this.user.password,
+      first_name : this.user.first_name,
+      role_id : this.user.role_id
     };
 
     console.log("In my component" + data);
 
-    this.tutorialService.create(data).subscribe({
+    this.UserService.create(data).subscribe({
       next: (res) => {
         console.log(res);
         this.submitted = true;
@@ -40,9 +40,9 @@ export class AddTutorialComponent {
     });
   }
 
-  newTutorial(): void {
+  newUser(): void {
     this.submitted = false;
-    this.tutorial = {
+    this.user = {
       first_name: '',
       name: '',
       password: '',
