@@ -1,0 +1,68 @@
+@if (viewMode){
+  @if (currentRole.role_id){
+  <h4>Role</h4>
+  <div>
+    <label><strong>Label:</strong></label> {{ currentRole.label }}
+  </div>
+  <div>
+    <label><strong>label:</strong></label>
+    {{ currentRole.label }}
+  </div>
+  <!-- <div>
+    <label><strong>Status:</strong></label>
+    {{ currentTutorial.published ? "Published" : "Pending" }}
+  </div> -->
+
+  {{log(currentRole.role_id)}}
+
+  <a class="badge badge-warning" [routerLink]="['/role', currentRole.role_id]">
+    Edit
+  </a>
+  } @else {<p>Please click on a Role...</p>}
+} @else {
+  @if (currentRole.role_id) {
+  <div class="edit-form">
+    <h4>Tutorial</h4>
+    <form>
+      <div class="form-group">
+        <label for="label">Label</label>
+        <input
+          type="text"
+          class="form-control"
+          id="label"
+          [(ngModel)]="currentRole.label"
+          name="label"
+        />
+      </div>
+
+      <!-- <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div> -->
+    </form>
+
+    <!-- @if (currentTutorial.published) {
+    <button class="badge badge-primary mr-2"
+      (click)="updatePublished(false)" >
+      UnPublish
+    </button>
+    } @else {
+    <button class="badge badge-primary mr-2" (click)="updatePublished(true)">
+      Publish
+    </button>
+    } -->
+
+    <button class="badge badge-danger mr-2" (click)="deleteRole()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateRole()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  } @else {<p>Cannot access this Role...</p>}
+}

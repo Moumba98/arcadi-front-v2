@@ -56,6 +56,8 @@ export class UserDetailsComponent implements OnInit {
   updateUser(): void {
     this.message = '';
 
+
+    console.log(" this.currentUser",  this.currentUser)
     this.UserService
       .update(this.currentUser.user_id, this.currentUser)
       .subscribe({

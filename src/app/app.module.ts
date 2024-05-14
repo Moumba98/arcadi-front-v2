@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { UserDetailsComponent} from './components/user-details/user-details.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
+import { RoleListComponent } from './components/role-list/role-list.component';
+import { RoleDetailsComponent } from './components/role-details/role-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddUserComponent,
     UserDetailsComponent,
-    UserListComponent,  ],
+    UserListComponent,
+    RoleListComponent,
+    RoleDetailsComponent,  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
