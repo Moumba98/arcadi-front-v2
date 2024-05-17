@@ -1,0 +1,81 @@
+@if(viewMode){
+
+  {{log(currentVeterinary_raport)}}
+
+  @if(currentVeterinary_raport.veterinary_raport_id){
+  <h4>veterinary_raport</h4>
+  <div>
+    <label><strong>date:</strong></label> {{ currentVeterinary_raport.date }}
+  </div>
+  <div>
+    <label><strong>detail:</strong></label>
+    {{ currentVeterinary_raport.detail }}
+  </div>
+  <!-- <div>
+    <label><strong>Status:</strong></label>
+    {{ currentTutorial.published ? "Published" : "Pending" }}
+  </div> -->
+
+  {{log(currentVeterinary_raport.veterinary_raport_id)}}
+
+  <a class="badge badge-warning" [routerLink]="['/veterinary_raport_id', currentVeterinary_raport.veterinary_raport_id]">
+    Edit
+  </a>
+  } @else {<p>Please click on a Veterinary_raport...</p>}
+} @else {
+  @if (currentVeterinary_raport.veterinary_raport_id) {
+  <div class="edit-form">
+    <h4>Tutorial</h4>
+    <form>
+      <div class="form-group">
+        <label for="date">date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          [(ngModel)]="currentVeterinary_raport.date"
+          name="date"
+        />
+      </div>
+      <div class="form-group">
+        <label for="detail">detail</label>
+        <input
+          type="text"
+          class="form-control"
+          id="detail"
+          [(ngModel)]="currentVeterinary_raport.detail"
+          name="detail"
+        />
+      </div>
+
+      <!-- <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div> -->
+    </form>
+
+    <!-- @if (currentTutorial.published) {
+    <button class="badge badge-primary mr-2"
+      (click)="updatePublished(false)" >
+      UnPublish
+    </button>
+    } @else {
+    <button class="badge badge-primary mr-2" (click)="updatePublished(true)">
+      Publish
+    </button>
+    } -->
+
+    <button class="badge badge-danger mr-2" (click)="deleteVeterinary_raport()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateVeterinary_raport()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  } @else {<p>Cannot access this Veterinary_raport...</p>}
+}

@@ -1,0 +1,46 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by title"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchTitle()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Race List</h4>
+    <ul class="list-group">
+      @for (race of race; track race.race_id; let i = $index) {
+      <li
+        class="list-group-item"
+        [class.active]="i == currentIndex"
+        (click)="setActiveRace(race, i)"
+      >
+        {{ race.label }}
+      </li>
+      }
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllRace()">
+      Remove All
+    </button>
+  </div>
+  <div class="col-md-6">
+    <app-race-details
+      [viewMode]="true"
+      [currentRace]="currentRace"
+    ></app-race-details>
+  </div>
+</div>
+

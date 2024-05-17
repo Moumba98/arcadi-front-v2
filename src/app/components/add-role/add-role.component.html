@@ -1,0 +1,22 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="label">label</label>
+      <input
+        type="text"
+        class="form-control"
+        id="label"
+        required
+        [(ngModel)]="role.label"
+        name="label"
+      />
+    </div>
+
+    <button (click)="saveRole()" class="btn btn-success">Submit</button>
+    } @else {
+    <h4>Role was submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newRole()">newRole</button>
+    }
+  </div>
+</div>

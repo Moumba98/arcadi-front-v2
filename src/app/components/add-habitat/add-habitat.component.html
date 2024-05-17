@@ -1,0 +1,47 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="name">Habitat Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        [(ngModel)]="habitat.name"
+        name="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="habitat.description"
+        name="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="habitat_comment">comment</label>
+      <input
+        type="text"
+        class="form-control"
+        id="habitat_comment"
+        required
+        [(ngModel)]="habitat.habitat_comment"
+        name="habitat_comment"
+      />
+      </div>
+
+
+    <button (click)="saveHabitat()" class="btn btn-success">Submit</button>
+    } @else {
+    <h4>Habitat was submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newHabitat()">Add</button>
+    }
+  </div>
+</div>
+

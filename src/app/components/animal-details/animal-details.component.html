@@ -1,0 +1,78 @@
+@if (viewMode){
+  @if (currentAnimal.animal_id){
+  <h4>Animal</h4>
+  <div>
+    <label><strong>Name:</strong></label> {{ currentAnimal.first_name }}
+  </div>
+  <div>
+    <label><strong>Detail:</strong></label>
+    {{ currentAnimal.etat }}
+  </div>
+  <!-- <div>
+    <label><strong>Status:</strong></label>
+    {{ currentTutorial.published ? "Published" : "Pending" }}
+  </div> -->
+
+  {{log(currentAnimal.animal_id)}}
+
+  <a class="badge badge-warning" [routerLink]="['/animal', currentAnimal.animal_id]">
+    Edit
+  </a>
+  } @else {<p>Please click on a animal...</p>}
+} @else {
+  @if (currentAnimal.animal_id) {
+  <div class="edit-form">
+    <h4>Tutorial</h4>
+    <form>
+      <div class="form-group">
+        <label for="first_name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="first_name"
+          [(ngModel)]="currentAnimal.first_name"
+          name="first_name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="etat">etat</label>
+        <input
+          type="text"
+          class="form-control"
+          id="etat"
+          [(ngModel)]="currentAnimal.etat"
+          name="etat"
+        />
+      </div>
+
+      <!-- <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div> -->
+    </form>
+
+    <!-- @if (currentTutorial.published) {
+    <button class="badge badge-primary mr-2"
+      (click)="updatePublished(false)" >
+      UnPublish
+    </button>
+    } @else {
+    <button class="badge badge-primary mr-2" (click)="updatePublished(true)">
+      Publish
+    </button>
+    } -->
+
+    <button class="badge badge-danger mr-2" (click)="deleteAnimal()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateAnimal()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  } @else {<p>Cannot access this Animal...</p>}
+}

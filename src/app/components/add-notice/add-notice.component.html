@@ -1,0 +1,46 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="pseudo">Notice Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="pseudo"
+        required
+        [(ngModel)]="notice.pseudo"
+        name="pseudo"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="comment">commentaire</label>
+      <input
+        class="form-control"
+        id="comment"
+        required
+        [(ngModel)]="notice.comment"
+        name="comment"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="isvisible">boolean</label>
+      <input
+        type="boolean"
+        class="form-control"
+        id="isvisible"
+        required
+        [(ngModel)]="notice.isvisible"
+        name="isvisible"
+      />
+      </div>
+
+
+    <button (click)="saveNotice()" class="btn btn-success">Submit</button>
+    } @else {
+    <h4>Habitat was submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newNotice()">Add-Notice</button>
+    }
+  </div>
+</div>

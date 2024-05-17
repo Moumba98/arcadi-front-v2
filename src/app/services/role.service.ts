@@ -32,7 +32,7 @@ export class RoleService {
     const role = {
       "label": data.label
     }
-    return this.http.put(`${baseUrl}?role_id=${id}`, role);
+    return this.http.put(`${baseUrl}/?role_id=${id}`, role);
   }
 
   delete(id: any): Observable<any> {

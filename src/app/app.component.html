@@ -2,19 +2,113 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a href="#" class="navbar-brand">ZOO Arcadi</a>
     <div class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a routerLink="user" class="nav-link">Users</a>
       </li>
       <li class="nav-item">
         <a routerLink="add" class="nav-link">Add</a>
       </li>
 
+     <!-- <li class="nav-item">
+        <a routerLink="role" class="nav-link">Role</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="animal" class="nav-link">animal</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="race" class="nav-link">Race</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="picture" class="nav-link">picture</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="habitat" class="nav-link">habitat</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="notice" class="nav-link">Notice</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="service" class="nav-link">Service</a>
+      </li>-->
+
+
+
       <li class="nav-item dropdown">
+        <a  routerLink="user"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" user="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Users
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="add-user" class="dropdown-item" href="#"  >Ajouter user</a>
+        </div>
+      </li>
+
+       <li class="nav-item dropdown">
         <a  routerLink="role"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Role
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a routerLink="role" class="dropdown-item" href="#"  >Ajouter role</a>
+          <a routerLink="add-role" class="dropdown-item" href="#"  >Ajouter role</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a  routerLink="Veterinary_raport"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" veterinary_raport="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Rapport Veterinaire
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="add-raport" class="dropdown-item" href="#"  >Ajouter Rapport</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a  routerLink="animal"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" animal="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Animal
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="add-animal" class="dropdown-item" href="#"  >Ajouter animal</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a  routerLink="race"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" race="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              race
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="add-race" class="dropdown-item" href="#"  >Ajouter Race</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a  routerLink="habitat"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" habitat="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              habitat
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="add-habitat" class="dropdown-item" href="#"  >Ajouter habitat</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a  routerLink="notice"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" notice="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Notice
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="add-notice" class="dropdown-item" href="#"  >Ajouter Notice</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a  routerLink="picture"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" habitat="picture" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Picture
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="add-picture" class="dropdown-item" href="#"  >Ajouter picture</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a  routerLink="service"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" service="service" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Service
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="add-service" class="dropdown-item" href="#"  >Ajouter service</a>
         </div>
       </li>
     </div>

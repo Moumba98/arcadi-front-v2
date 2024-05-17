@@ -1,0 +1,46 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by title"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchTitle()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Picture List</h4>
+    <ul class="list-group">
+      @for (picture of picture; track picture.picture_id; let i = $index) {
+      <li
+        class="list-group-item"
+        [class.active]="i == currentIndex"
+        (click)="setActivePicture(picture, i)"
+      >
+        {{ picture.picture_date }}
+      </li>
+      }
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllPicture()">
+      Remove All
+    </button>
+  </div>
+  <div class="col-md-6">
+    <app-picture-details
+      [viewMode]="true"
+      [currentPicture]="currentPicture"
+    ></app-picture-details>
+  </div>
+</div>
+

@@ -1,0 +1,57 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="date">date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="date"
+        required
+        [(ngModel)]="veterinary_raport.date"
+        name="date"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="detail">detail</label>
+      <input
+        class="form-control"
+        id="detail"
+        required
+        [(ngModel)]="veterinary_raport.detail"
+        name="detail"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="user_id">user_id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="user_id"
+        required
+        [(ngModel)]="veterinary_raport.user_id"
+        name="user_id"
+      />
+      </div>
+
+      <div class="form-group">
+        <label for="animal_id">Animal Id</label>
+        <input
+          type="number"
+          class="form-control"
+          id="animal_id"
+          required
+          [(ngModel)]="veterinary_raport.animal_id"
+          name="role_id"
+        />
+      </div>
+
+    <button (click)="saveVeterinary_raport()" class="btn btn-success">Submit</button>
+    } @else {
+    <h4>Veterinary_raport was submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newVeterinary_raport()">Add</button>
+    }
+  </div>
+</div>

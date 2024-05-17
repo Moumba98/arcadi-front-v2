@@ -1,0 +1,57 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="first_name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="first_name"
+        required
+        [(ngModel)]="animal.first_name"
+        name="first_name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="etat">etat</label>
+      <input
+        class="form-control"
+        id="etat"
+        required
+        [(ngModel)]="animal.etat"
+        name="etat"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="race_id">race-id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="race_id"
+        required
+        [(ngModel)]="animal.race_id"
+        name="race_id"
+      />
+      </div>
+
+      <div class="form-group">
+        <label for="habitat_id">habitat_Id</label>
+        <input
+          type="number"
+          class="form-control"
+          id="habitat_id"
+          required
+          [(ngModel)]="animal.habitat_id"
+          name="habitat_id"
+        />
+      </div>
+
+    <button (click)="saveAnimal()" class="btn btn-success">Submit</button>
+    } @else {
+    <h4>Animal was submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newAnimal()">Add-animal</button>
+    }
+  </div>
+</div>

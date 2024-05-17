@@ -1,0 +1,35 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="name">Service Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        [(ngModel)]="service.name"
+        name="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="service.description"
+        name="description"
+      />
+    </div>
+
+
+
+    <button (click)="saveService()" class="btn btn-success">Submit</button>
+    } @else {
+    <h4>Service was submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newService()">Add-service</button>
+    }
+  </div>
+</div>

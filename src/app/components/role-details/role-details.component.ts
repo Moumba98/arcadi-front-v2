@@ -54,7 +54,7 @@ export class RoleDetailsComponent implements OnInit  {
   updateRole(): void {
     this.message = '';
     const data = {
-      role_id : this.currentRole.role_id,
+     role_id : this.currentRole.role_id,
       label: this.currentRole.label,
     };
 

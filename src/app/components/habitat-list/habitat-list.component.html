@@ -1,0 +1,45 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by title"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchTitle()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Habitat List</h4>
+    <ul class="list-group">
+      @for (habitat of habitat; track habitat.habitat_id; let i = $index) {
+      <li
+        class="list-group-item"
+        [class.active]="i == currentIndex"
+        (click)="setActiveHabitat(habitat, i)"
+      >
+        {{ habitat.name }}
+      </li>
+      }
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllHabitat()">
+      Remove All
+    </button>
+  </div>
+  <div class="col-md-6">
+    <app-habitat-details
+      [viewMode]="true"
+      [currentHabitat]="currentHabitat"
+    ></app-habitat-details>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="label">label</label>
+      <input
+        type="text"
+        class="form-control"
+        id="label"
+        required
+        [(ngModel)]="race.label"
+        name="label"
+      />
+    </div>
+
+    <button (click)="saveRace()" class="btn btn-success">Submit</button>
+    } @else {
+    <h4>Race was submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newRace()">newRace</button>
+    }
+  </div>
+</div>
+

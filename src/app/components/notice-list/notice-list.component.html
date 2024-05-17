@@ -1,0 +1,46 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by title"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchTitle()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Notice List</h4>
+    <ul class="list-group">
+      @for (notice of notice; track notice.notice_id; let i = $index) {
+      <li
+        class="list-group-item"
+        [class.active]="i == currentIndex"
+        (click)="setActiveNotice(notice, i)"
+      >
+        {{ notice.pseudo }}
+      </li>
+      }
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllNotice()">
+      Remove All
+    </button>
+  </div>
+  <div class="col-md-6">
+    <app-notice-details
+      [viewMode]="true"
+      [currentNotice]="currentNotice"
+    ></app-notice-details>
+  </div>
+</div>
+

@@ -73,6 +73,7 @@ export class UserDetailsComponent implements OnInit {
 
   deleteUser(): void {
     this.UserService.delete(this.currentUser.user_id).subscribe({
+      
       next: (res) => {
         console.log(res);
         this.router.navigate(['/user']);
